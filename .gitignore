@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+ml_training/venv_gpu/
+ml_training/venv_gpu_311/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large model files
+*.pt
+*.pth
+*.onnx
+*.tflite
+
+# Datasets
+ml_training/datasets/raw/
+ml_training/datasets/processed/
+
+# Runs and outputs
+ml_training/runs/
+models/
+runs/

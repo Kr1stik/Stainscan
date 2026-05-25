@@ -1,0 +1,4 @@
+train: processed/combined_train_clothing
+val: processed/combined_val_clothing
+nc: 5
+names: ['oil', 'mud', 'ink', 'clothing', 'fabric']

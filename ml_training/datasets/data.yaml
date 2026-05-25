@@ -1,0 +1,4 @@
+train: processed/combined_train
+val: processed/combined_val
+nc: 3
+names: ['oil', 'mud', 'ink']

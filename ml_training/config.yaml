@@ -1,0 +1,52 @@
+dataset:
+  name: "Stain Detection Dataset"
+  version: "1.0"
+  raw_path: "datasets/raw"
+  processed_path: "datasets/processed"
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+classes:
+  - oil
+  - mud
+  - ink
+
+preprocessing:
+  image_size: [640, 640]
+  color_mode: "RGB"
+  normalize: true
+
+augmentation:
+  enabled: true
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  degrees: 10.0
+  translate: 0.1
+  scale: 0.5
+  flipud: 0.5
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.1
+  copy_paste: 0.0
+
+training:
+  model_type: "yolov11"
+  model_size: "m"  # Options: n (nano), s (small), m (medium), l (large), x (extra-large)
+  task: "detect"  # Options: detect, classify, segment
+  epochs: 100
+  batch_size: 8
+  learning_rate: 0.01
+  patience: 20
+  device: 0  # GPU device, use 'cpu' for CPU only
+
+model:
+  name: "stain_detection_yolov11"
+  save_path: "models/"
+  format: "pt"  # .pt format for PyTorch
+
+output:
+  logs_dir: "runs/classify/"
+  project: "stain_detection"
+  save_period: 10
